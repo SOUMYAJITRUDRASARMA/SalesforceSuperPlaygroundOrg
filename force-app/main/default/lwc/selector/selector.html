@@ -1,0 +1,16 @@
+<template>
+    <div class="wrapper">
+    <header class="header">Select a Bike</header>
+    <section class="content">
+        <div class="columns">
+        <main class="main" >
+            <div class="slds-text-heading_small">{name}</div>
+            <c-list onproductselected={handleProductSelected}></c-list>
+        </main>
+        <aside class="sidebar-second">
+            <c-detail product-id={selectedProductId}></c-detail>
+        </aside>
+        </div>
+    </section>
+    </div>
+</template>

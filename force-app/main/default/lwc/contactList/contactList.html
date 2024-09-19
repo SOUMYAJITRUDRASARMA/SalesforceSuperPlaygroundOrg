@@ -1,0 +1,14 @@
+<template>
+    <lightning-card title="Contact List" icon-name="standard:contact">
+        <lightning-datatable
+            key-field="Id"
+            data={contacts}
+            columns={columns}
+            hide-checkbox-column="true">
+        </lightning-datatable>
+
+        <template if:true={error}>
+            <p class="slds-text-color_error">{errors}</p>
+        </template>
+    </lightning-card>
+</template>

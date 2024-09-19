@@ -1,0 +1,31 @@
+<template>
+    <!-- Input field for Annual Revenue -->
+    <lightning-input 
+        type="number" 
+        label="Annual Revenue" 
+        formatter="currency" 
+        value={annualRevenue} 
+        onchange={handleChange}>
+    </lightning-input>
+
+    <!-- Reset button -->
+    <lightning-button 
+        label="Reset" 
+        onclick={reset}>
+    </lightning-button>
+
+    <!-- Conditionally display the accounts list if data is returned -->
+    <template if:true={accounts}>
+        <ul>
+            <!-- Iterate over the returned accounts and display the Name of each account -->
+            <template for:each={accounts} for:item="account">
+                <li key={account.Id}>{account.Name}</li>
+            </template>
+        </ul>
+    </template>
+
+    <!-- Message to show when no accounts are available -->
+    <template if:false={accounts}>
+        <p>No accounts available.</p>
+    </template>
+</template>
